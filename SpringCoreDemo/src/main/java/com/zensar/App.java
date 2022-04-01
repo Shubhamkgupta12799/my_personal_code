@@ -3,6 +3,7 @@ package com.zensar;
 import java.lang.reflect.Field;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -10,19 +11,30 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class App {
 
-	public static void main(String[] args) {  
+	public static void main(String[] args) {   
 	
 		
 		AbstractApplicationContext iocContainer = new ClassPathXmlApplicationContext("beans.xml");
+		ChatApplication chatApplication =(ChatApplication) iocContainer.getBean("chatApp");
+		System.out.println(chatApplication);
+	
+
+//		Order order2 = (Order) iocContainer.getBean("orderBeans2");
+//		System.out.println("Items : - "+order2);
+//		
+//		LifeCycleBean lifeCycleBean = (LifeCycleBean) iocContainer.getBean("lifeCycleBean");
+//		System.out.println(lifeCycleBean);
+//		
+	//	 iocContainer.registerShutdownHook();       
 		
-		Map<String, Order> map = iocContainer.getBeansOfType(Order.class);
-		double total = 0.0;
-		for(Entry<String, Order> order:map.entrySet())
-		{
-			
-			 total = total +order.getValue().getItem().getPrice();
-		}
-		System.out.println("Total Order item price is : - "+total);
+//		Map<String, Order> map = iocContainer.getBeansOfType(Order.class);
+//		double total = 0.0;
+//		for(Entry<String, Order> order:map.entrySet())
+//		{
+//			
+//			 total = total +order.getValue().getItem().getPrice();
+//		}
+//		System.out.println("Total Order item price is : - "+total);
 //		
 //		AbstractApplicationContext iocContainer2 = new FileSystemXmlApplicationContext("c://anand/config/index.txt");
 //		

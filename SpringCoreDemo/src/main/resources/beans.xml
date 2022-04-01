@@ -8,24 +8,109 @@
     http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 
-	<bean id="itemBeans1" class="com.zensar.Item">
+	<bean id="chatApp" class="com.zensar.ChatApplication">
+           <property name="userMap">
+              <map>
+                 <entry key="username1">
+                   <set>
+                     	<value>Rahul</value>
+                     	<value>Rahul</value>
+                     	<value>Rahul</value>
+                     	<value>Rahul</value>	                 	
+                   </set>
+                 </entry>
+                 <entry key="username1">
+                    <set>
+                     	<value>Shubham</value>
+                     	<value>Rahul</value>
+                     	<value>Rahul</value>
+                     	<value>Rahul</value>
+                     	<value>Rahul</value>	                 	
+                   </set>
+                 </entry>
+                 <entry key="username3">
+                   <set>
+                     	<value>Shivam</value>
+                     	<value>Rahul</value>
+                     	<value>Rahul</value>
+                     	<value>Rahul</value>
+                     	<value>Rahul</value>	                 	
+                   </set>
+                </entry>
+              </map>
+           </property>
+           
+            <property name="messageMap">
+              <map>
+                 <entry key="username1">
+                   <list>
+                     	<value>Hi..bro</value>   
+                     	<value>hello</value>
+                     	<value>bye</value>
+                     	<value>namaste</value>
+                     	<value>good morning</value>                  	
+                   </list>                  
+                 </entry>
+                 <entry key="username2">
+                   <list>
+                     	<value>Hi..bro</value>   
+                     	<value>hello</value>
+                     	<value>bye</value>
+                     	<value>namaste</value>
+                     	<value>good morning</value>                  	
+                   </list>                  
+                 </entry>
+                 <entry key="username2">
+                   <list>
+                     	<value>Hi..bro</value>   
+                     	<value>hello</value>
+                     	<value>bye</value>
+                     	<value>namaste</value>
+                     	<value>good morning</value>                  	
+                   </list>                  
+                 </entry>
+              </map>
+           </property>
+	</bean>
+
+<!-- 	<bean id="itemBeans" class="com.zensar.Item">
+		<constructor-arg name= "name" value= "Tablet"></constructor-arg>
+		<constructor-arg name= "price" value= "20000"></constructor-arg>
+	</bean>
+	
+	 
+	 <bean id="lifeCycleBean" class="com.zensar.LifeCycleBean" init-method="initialize" destroy-method="mydestroy">
+		<property name="price" value="90000" />
+	</bean>
+	
+	
+	 <bean id="myBeanPostProcessor" class="com.zensar.MyBeanPostProcessor">
+	</bean>
+
+	 <bean id="itemBeans1" class="com.zensar.Item">
 		<property name="name" value="Laptop" />
 		<property name="price" value="7000" />
 	</bean>
+	
 	
 	<bean id="itemBeans2" class="com.zensar.Item">
 		<property name="name" value="Desktop" />
 		<property name="price" value="12000" />
 	</bean>
 
-	<bean id="orderBeans1" class="com.zensar.Order">
-		<property name="item" ref="itemBeans1" />
+	<bean id="orderBeans1" class="com.zensar.Order" lazy-init="true">
+		<property name="item">
+			<bean id="itemBeans1" class="com.zensar.Item">
+				<property name="name" value="Laptop" />
+				<property name="price" value="7000" />
+			</bean>
+		</property>
 		<property name="title" value="Laptop purchase" />
 	</bean>
+	 
 	
-	
-	<bean id="orderBeans2" class="com.zensar.Order">
+	<bean id="orderBeans2" class="com.zensar.Order" scope="prototype" lazy-init="true" init-method="initialize" destroy-method="destroy">
 		<property name="item" ref="itemBeans2" />
 		<property name="title" value="Desktop purchase" />
-	</bean>
+	</bean>    -->
 </beans>
