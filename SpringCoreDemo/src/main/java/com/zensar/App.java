@@ -25,7 +25,7 @@ public class App {
 		System.out.println("Total Order item price is : - "+total);
 		
 		AbstractApplicationContext iocContainer2 = new FileSystemXmlApplicationContext("c://anand/config/index.txt");
-		
+	// My name is Rahul	
 //		
 //		Item item1 = (Item) iocContainer.getBean("itemBeans1");
 //		System.out.println("Items : - "+item1);
